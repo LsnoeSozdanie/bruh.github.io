@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Герои Dota 2</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <h1 style="text-align:center"> Герои Dota 2 </h1>
+    <div class="container">
+    
+        <form id="main" v-cloak>
+
+            <div class="bar">
+        
+                <!-- Кнопки для переключения вариантов сетки. -->
+        
+                <a class="list-icon" v-bind:class="{ 'active': layout == 'list'}" v-on:click="layout = 'list'"></a>
+            </div>
+        
+        
+            
+            <ul v-if="layout == 'list'" class="list">
+                <!-- Компактный вариант с фото и подписями -->
+                <li v-for="a in articles">
+                    <a v-bind:href="a.url" target="_blank"><img v-bind:src="a.image.icon" /></a>
+                    <p>{{a.title}}</p>
+                </li>
+            </ul>
+        
+        </form>
+    </div>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.5/vue.min.js"></script>
+    <script>
+    var demo = new Vue({
+        el: '#main',
+        data: {
+            // Настройка начального варианта разметки, возможные варианты – сетка (grid) и список (list).
+            layout: 'list',
+    
+            articles: [{
+                "title":"Abbadon",
+                "image": {
+                    "icon": "Images/Abbadon.jpg"
+                }
+            },
+            {
+                "title": "Alchemist",
+                "image": {
+                    "icon": "Images/Alchemist.jpg"
+                }
+            },
+            {
+                "title": "Axe",
+                "image": {
+                    "icon": "Images/Axe.jpg"
+                }
+            },
+            {
+                "title": "Beastmaster",
+                "image": {
+                    "icon": "Images/Beastmaster.jpg"
+                }
+            },
+            {
+                "title": "Brewmaster",
+                "image": {
+                    "icon": "Images/Brewmaster.jpg"
+                }
+            },
+            {
+                "title": "Bristleback",
+                "image": {
+                    "icon": "Images/Bristleback.jpg"
+                }
+            },
+            {
+                "title": "Centaur Warrunner",
+                "image": {
+                    "icon": "Images/CentaurWarrunner.jpg"
+                }
+            },
+            {
+                "title": "Путь веб-разработчика в 2017",
+                "image": {
+                    "icon": "https://proglib.io/wp-content/uploads/2017/05/img-web-development-1-324x160.jpg"
+                }
+            },
+            {
+                "title": "Путь веб-разработчика в 2017",
+                "image": {
+                    "icon": "https://proglib.io/wp-content/uploads/2017/05/img-web-development-1-324x160.jpg"
+                }
+            },
+            {
+                "title": "Путь веб-разработчика в 2017",
+                "image": {
+                    "icon": "https://proglib.io/wp-content/uploads/2017/05/img-web-development-1-324x160.jpg"
+                }
+            },
+            {
+                "title": "Путь веб-разработчика в 2017",
+                "image": {
+                    "icon": "https://proglib.io/wp-content/uploads/2017/05/img-web-development-1-324x160.jpg"
+                }
+            },
+            {
+                "title": "Путь веб-разработчика в 2017",
+                "image": {
+                    "icon": "https://proglib.io/wp-content/uploads/2017/05/img-web-development-1-324x160.jpg"
+                }
+            },
+        ]
+    
+        }
+    });
+</script>
+</body>
+</html>
